@@ -8,14 +8,16 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static("public"));
 
 // // middleware for parsing JSON and urlencoded form data
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use('/api', api);
 
 // const allRoutes = require("./controllers")
 // app.use(allRoutes);
 
 
-// // the file path for the index.html may not be right, watch that for later errors
+// the file path for the index.html may not be right, watch that for later errors
 // app.get("/", (req, res) => {
 //     res.sendFile(path.join(__dirname, "/public/index.html"));
 // });

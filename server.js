@@ -13,14 +13,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use('/api', api);
 
-const allRoutes = require("./notesController")
+const allRoutes = require("./notes")
 app.use(allRoutes);
 
 
 // the file path for the index.html may not be right, watch that for later errors
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "/public/index.html"));
-// });
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"));
+});
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
+});
 
 app.listen(PORT, () => {
     console.log("listenin to port " + PORT);

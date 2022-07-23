@@ -40,4 +40,6 @@ router.post("/", (req, res) => {
     })
 })
 
+// router.use("/api/notes", allRoutes)
+
 module.exports = router;

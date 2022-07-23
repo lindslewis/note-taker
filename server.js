@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use('/api', api);
 
-// const allRoutes = require("./controllers")
-// app.use(allRoutes);
+const allRoutes = require("./notesController")
+app.use(allRoutes);
 
 
 // the file path for the index.html may not be right, watch that for later errors

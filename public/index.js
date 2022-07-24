@@ -1,4 +1,4 @@
-
+// const noteJson = require('../db/db.json');
 
 // fetch("/api/notes").then(res=>res.json()).then(data=>{
 //   console.log(data);
@@ -45,14 +45,20 @@ const getNotes = () =>
     },
   });
 
+  // this is important for saving the note that we write in
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(note),
+    body:JSON.stringify(note),
   });
+  // below is something I added to try and get the save to work, doesn't work.
+  // }).then(res=>res.json()).then(data=>{
+  //   console.log(data)
+  //   location.reload();
+  // })
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -62,6 +68,7 @@ const deleteNote = (id) =>
     },
   });
 
+  // this is for notes that already exist?
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
@@ -78,6 +85,7 @@ const renderActiveNote = () => {
   }
 };
 
+// so this is taking the saveNote() function above and using it to create a new note. calls getAndRenderNotes and renderActiveNote. renderActiveNote is above, where's the other?
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
@@ -129,7 +137,7 @@ const handleRenderSaveBtn = () => {
   }
 };
 
-// Render the list of note titles
+// Render the list of note titles, this works
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
@@ -138,11 +146,12 @@ const renderNoteList = async (notes) => {
 
   let noteListItems = [];
 
-  // Returns HTML element with or without a delete button
+  // Returns HTML element with or without a delete button, this is what my fetch at the top was trying to do
   const createLi = (text, delBtn = true) => {
     const liEl = document.createElement('li');
     liEl.classList.add('list-group-item');
 
+    // this click below is what handles looking at the notes that are on the left
     const spanEl = document.createElement('span');
     spanEl.classList.add('list-item-title');
     spanEl.innerText = text;
@@ -171,6 +180,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(createLi('No saved Notes', false));
   }
 
+  // this is part of creating a new note and pushing it to the existing
   jsonNotes.forEach((note) => {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
@@ -183,11 +193,17 @@ const renderNoteList = async (notes) => {
   }
 };
 
-// Gets notes from the db and renders them to the sidebar
+// Gets notes from the db and renders them to the sidebar, this is also called in handleNoteSave()
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
-  saveNoteBtn.addEventListener('click', handleNoteSave);
+  saveNoteBtn.addEventListener('click',  handleNoteSave);
+  // saveNoteBtn.addEventListener('submit', (e) => {
+  //   e.preventDefault()
+  // })
+    
+   
+  // add save function here or above???
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);

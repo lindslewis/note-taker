@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
+// const uuid maybe???
 
 router.get("/", (req, res) =>  {
-    fs.readFile("./db.json", "utf-8", (err, data) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
         if(err) {
             throw err;
         } else {
@@ -16,18 +17,20 @@ router.get("/", (req, res) =>  {
 router.post("/", (req, res) => {
     console.log(req.body);
     const newNote = {
-        id: req.body.id,
+        // id: req.body.id,
         title: req.body.title,
         text: req.body.text,
     };
-    fs.readFile("./db.json", "utf-8", (err, data) => {
+
+    // if file path is problem, fix this
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
             throw err;
         } else {
             const notes = JSON.parse(data);
             notes.push(newNote);
             fs.writeFile(
-                "./db.json",
+                "./db/db.json",
                 JSON.stringify(notes, null, 4),
                 (err, data) => {
                     if (err) {

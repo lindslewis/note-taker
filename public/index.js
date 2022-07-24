@@ -1,3 +1,15 @@
+
+
+// fetch("/api/notes").then(res=>res.json()).then(data=>{
+//   console.log(data);
+//   data.forEach(note=>{
+//     const newItem = document.createElement("li");
+//     // only title because the list to the side only shows the titles of the notes
+//     newItem.textContent = note.title;
+//     document.querySelector('.list-group').append(newItem)
+//   })
+// })
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -70,6 +82,7 @@ const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    // id stuff
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();

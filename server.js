@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require("path");
-const noteData = require('./db.json')
-
+const noteData = require('./db/db.json')
+// maybe file path??
 const app = express();
 const PORT = process.env.PORT || 3000;
 

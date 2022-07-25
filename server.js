@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require("path");
 const noteData = require('./db/db.json')
-// maybe file path??
 const app = express();
 const PORT = process.env.PORT || 3000;
 const fs = require('fs');
@@ -11,14 +10,8 @@ const uuid = require("./helpers/uuid");
 app.use(express.static("public"));
 
 // // middleware for parsing JSON and urlencoded form data
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use('/api', api);
-
-// const allRoutes = require("./notes")
-// app.use(allRoutes);
-
 
 // the file path for the index.html may not be right, watch that for later errors
 app.get("/", (req, res) => {
@@ -29,7 +22,7 @@ app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
-// res.json like this only pulls it one time
+// res.json. req only pulls it one time
 app.get("/api/notes", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
@@ -98,5 +91,3 @@ app.delete("/api/notes/:id", (req, res) => {
 app.listen(PORT, () => {
     console.log("listenin to port " + PORT);
 })
-
-// http://localhost:PORT

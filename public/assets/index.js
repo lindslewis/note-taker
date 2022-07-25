@@ -1,15 +1,3 @@
-// const noteJson = require('../db/db.json');
-
-// fetch("/api/notes").then(res=>res.json()).then(data=>{
-//   console.log(data);
-//   data.forEach(note=>{
-//     const newItem = document.createElement("li");
-//     // only title because the list to the side only shows the titles of the notes
-//     newItem.textContent = note.title;
-//     document.querySelector('.list-group').append(newItem)
-//   })
-// })
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -54,11 +42,6 @@ const saveNote = (note) =>
     },
     body:JSON.stringify(note),
   });
-  // below is something I added to try and get the save to work, doesn't work.
-  // }).then(res=>res.json()).then(data=>{
-  //   console.log(data)
-  //   location.reload();
-  // })
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -85,7 +68,7 @@ const renderActiveNote = () => {
   }
 };
 
-// so this is taking the saveNote() function above and using it to create a new note. calls getAndRenderNotes and renderActiveNote. renderActiveNote is above, where's the other?
+// so this is taking the saveNote() function above and using it to create a new note. 
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
@@ -198,12 +181,6 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click',  handleNoteSave);
-  // saveNoteBtn.addEventListener('submit', (e) => {
-  //   e.preventDefault()
-  // })
-    
-   
-  // add save function here or above???
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);

@@ -1,45 +1,70 @@
-const express = require("express");
-const router = express.Router();
-const fs = require('fs');
+// const express = require("express");
+// const router = express.Router();
+// const fs = require('fs');
+// const uuid = require("./helpers/uuid");
+// // const { readAndAppend } = require('./')
 
-router.get("/", (req, res) =>  {
-    fs.readFile("./db.json", "utf-8", (err, data) => {
-        if(err) {
-            throw err;
-        } else {
-            const notes = JSON.parse(data);
-            res.json(notes)
-        }
-    });
-});
+// // const submitNote = document.querySelector('.save-note')
 
-router.post("/", (req, res) => {
-    console.log(req.body);
-    const newNote = {
-        id: req.body.id,
-        title: req.body.title,
-        text: req.body.text,
-    };
-    fs.readFile("./db.json", "utf-8", (err, data) => {
-        if (err) {
-            throw err;
-        } else {
-            const notes = JSON.parse(data);
-            notes.push(newNote);
-            fs.writeFile(
-                "./db.json",
-                JSON.stringify(notes, null, 4),
-                (err, data) => {
-                    if (err) {
-                        throw err;   
-                    }
-                    res.json({data: req.body, message: "You've successfully add a new note!"});
-                }
-            )
-        }
-    })
-})
+// // const uuid maybe???
 
-// router.use("/api/notes", allRoutes)
+// // router.get("/", (req, res) =>  {
+// //     fs.readFile("./db/db.json", "utf8", (err, data) => {
+// //         if(err) {
+// //             throw err;
+// //         } else {
+// //             const notes = JSON.parse(data);
+// //             res.json(notes)
+// //         }
+// //     });
+// // });
 
-module.exports = router;
+// router.post("/", (req, res) => {
+//     console.log(req.body);
+//     const { title, text } = req.body;
+
+//     if (title && text) {
+//         const newNote = {
+//             title,
+//             text,
+//             id: uuid()
+//         }
+//         // newNote.push(notes)
+//         // readAndAppend(newNote, './db/db.json');
+//     // }
+
+//     // readAndAppend(newNote, './db/db.json');
+
+
+
+//         // // title: noteTitle.value,
+//         // // text: noteText.value
+//         // id: req.body.id,
+//         // title: req.body.title,
+//         // text: req.body.text,
+//     // };
+
+//     // the saving function needs to happen here I think
+//     fs.readFileSync("./db/db.json", "utf8", (err, data) => {
+//         if (err) {
+//             throw err;
+//         } else {
+//             const notes = JSON.parse(data);
+//             notes.push(newNote);
+//             fs.writeFileSync(
+//                 "./db/db.json",
+//                 JSON.stringify(notes, null, 4),
+//                 (err, data) => {
+//                     if (err) {
+//                         throw err;   
+//                     }
+//                     res.json({data: req.body, message: "You've successfully added a new note!"});
+//                 }
+//             )
+//         }
+//     })
+// }})
+
+// // router.use("/api/notes", allRoutes)
+
+// module.exports = router;

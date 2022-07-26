@@ -16,13 +16,17 @@ Check it out at the deployed link:
 
 ## Walkthrough Video
 
+<<<<<<< HEAD
 [![Watch the video]Assets\images\video-img.jpg](Assets\note-taker-walkthrough.mp4)
+=======
+[![Watch the video]https://user-images.githubusercontent.com/104105172/180899226-05bd7689-1781-45d6-aad4-73aa8dfce571.jpg](Assets\Note Taker Walkthrough.mp4)
+>>>>>>> a0057e10a2f63724af5fe11cd8f662877d770995
 
 
 
 ## App Images
-![Landing Page](Assets\images\landing-page.jpg)
-![Note Page](Assets\images\notes-page.jpg)
+![landing-page](https://user-images.githubusercontent.com/104105172/180899192-be7d2546-3a37-4ea2-8eaf-3431c73ea85e.jpg)
+![notes-page](https://user-images.githubusercontent.com/104105172/180899208-6a740ad0-d28f-4b16-ad3d-2cde81194b0b.jpg)
 
 ## Usage
 This app is fully developed to be used in the browser of the user's choice. They simply take the Heroku link and use the app explicitly on the deployed webpage. It's intended for users of all walks of life, but may be more beneficial to employees in a company who need to track their tasks.
@@ -58,3 +62,5 @@ University of Washington Coding Bootcamp:
 Instructor and Teaching Assistants
 
 
+
+![video-img](https://user-images.githubusercontent.com/104105172/180899226-05bd7689-1781-45d6-aad4-73aa8dfce571.jpg)

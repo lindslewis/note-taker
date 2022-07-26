@@ -16,13 +16,7 @@ Check it out at the deployed link:
 
 ## Walkthrough Video
 
-
-[![Watch the video]Assets\images\video-img.jpg](Assets\note-taker-walkthrough.mp4)
-
-[![Watch the video]https://user-images.githubusercontent.com/104105172/180899226-05bd7689-1781-45d6-aad4-73aa8dfce571.jpg](Assets\Note Taker Walkthrough.mp4)
-
-
-
+[![Watch the video]https://user-images.githubusercontent.com/104105172/180899226-05bd7689-1781-45d6-aad4-73aa8dfce571.jpg](Assets\note-taker-walkthrough.mp4)
 
 ## App Images
 ![landing-page](https://user-images.githubusercontent.com/104105172/180899192-be7d2546-3a37-4ea2-8eaf-3431c73ea85e.jpg)

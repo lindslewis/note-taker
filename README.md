@@ -16,11 +16,11 @@ Check it out at the deployed link:
 
 ## Walkthrough Video
 
-<<<<<<< HEAD
+
 [![Watch the video]Assets\images\video-img.jpg](Assets\note-taker-walkthrough.mp4)
-=======
+
 [![Watch the video]https://user-images.githubusercontent.com/104105172/180899226-05bd7689-1781-45d6-aad4-73aa8dfce571.jpg](Assets\Note Taker Walkthrough.mp4)
->>>>>>> a0057e10a2f63724af5fe11cd8f662877d770995
+
 
 
 

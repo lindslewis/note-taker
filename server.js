@@ -34,6 +34,7 @@ app.get("/api/notes", (req, res) => {
     });
 });
 
+// this is for posting/saving new notes
 app.post("/api/notes", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
@@ -65,6 +66,7 @@ app.post("/api/notes", (req, res) => {
     })
 });
 
+// deleting old notes!
 app.delete("/api/notes/:id", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {

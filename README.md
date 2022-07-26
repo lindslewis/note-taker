@@ -16,7 +16,7 @@ Check it out at the deployed link:
 
 ## Walkthrough Video
 
-[![Watch the video]Assets\images\video-img.jpg](Assets\Note Taker Walkthrough.mp4)
+[![Watch the video]Assets\images\video-img.jpg](Assets\note-taker-walkthrough.mp4)
 
 
 

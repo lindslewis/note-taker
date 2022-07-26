@@ -16,10 +16,7 @@ Check it out at the deployed link:
 
 ## Walkthrough Video
 
-[![Walkthrough Video]({Assets\images\video-img.jpg})]({https://drive.google.com/file/d/1YIpyBI-ZQjjuZoXWgXTDkYKjjyW-TBU5/view?usp=sharing})
-
-
-
+[![Walkthrough Video]({https://user-images.githubusercontent.com/104105172/180899226-05bd7689-1781-45d6-aad4-73aa8dfce571.jpg})]({https://drive.google.com/file/d/1YIpyBI-ZQjjuZoXWgXTDkYKjjyW-TBU5/view?usp=sharing})
 
 ## App Images
 ![landing-page](https://user-images.githubusercontent.com/104105172/180899192-be7d2546-3a37-4ea2-8eaf-3431c73ea85e.jpg)
